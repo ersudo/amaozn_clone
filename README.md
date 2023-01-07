@@ -1,2 +1,4 @@
 #amazon_clone
-check it works
+FrontEnd: React 
+BackEnd: Spring + Node.js 
+Server: None (Currently)
