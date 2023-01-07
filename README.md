@@ -1,4 +1,4 @@
-#amazon_clone
-FrontEnd: React 
-BackEnd: Spring + Node.js 
-Server: None (Currently)
+#amazon_clone <br>
+FrontEnd: React <br>
+BackEnd: Spring + Node.js  <br>
+Server: None (Currently) <br>
