@@ -1,0 +1,47 @@
+.placeorder__image{
+    height: 500px;
+    margin: 100px  150px;
+}
+.placerorder__description{
+    margin-top: 50px;
+}
+.textgap{
+    margin: 10px;
+}
+.pricetag{
+    font-size: 24px;
+    color:#B12704;
+}
+.about__detail{
+    font-size: 14px!important;
+    font-weight: 600;
+    line-height: 20px!important;
+    text-decoration: none;
+    color: #007185;
+}
+.about__seller{
+    text-decoration: none;
+    color: #007185;
+    font-weight: 600;
+}
+.placeorder__order{
+    margin-top: 50px;
+    width: 200px;
+    height: 250px;
+    margin-left: 20px;
+}
+.placeorder__button{
+    width: 180px;
+    height: 30px;
+    border-radius: 40px;
+    margin: 5px;
+    border: 0px;
+    color: black;
+}
+.buynow{
+    background-color: #FFD712;
+}
+.addtocart{
+    margin-top: 150px;
+    background-color: #FFA41B;
+}

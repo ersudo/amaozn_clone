@@ -9,6 +9,7 @@
 
 }
 .LeftSide__brandname{
+    font-weight: bold;
 }
 .brandname{
     display: block;
