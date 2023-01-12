@@ -3,6 +3,7 @@ import "./PlaceOrder.css"
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Paper from '@mui/material/Paper';
+import { Checkbox } from '@mui/material';
 export default function PlaceOrder() {
   return (
     <div> 
@@ -12,7 +13,7 @@ export default function PlaceOrder() {
         </Grid>
         <Grid item xs={4}>
             <div className="placerorder__description">
-                <div style={{fontSize:"24px",lineHeight: "32px",fontWeight:"500" }}>New Apple iPhone 11 (64GB) - Green </div>
+                <div style={{fontSize:"24px",lineHeight: "32px",fontWeight:"500"}}>New Apple iPhone 11 (64GB) - Green </div>
                 <div>
                     <Rating name="read-only" value="3" readOnly  style={{fontSize:"20px"}}/>
                     32,054 ratings |
@@ -31,8 +32,18 @@ export default function PlaceOrder() {
         </Grid>
         <Grid item xs={3}>
             <Paper variant="outlined" className="placeorder__order">
-                <button className="placeorder__button addtocart">Add to Cart</button>
-                <button className="placeorder__button buynow">Buy Now</button>
+                    <div>
+                        <div className="textgap"><strong>Without Exchange</strong> <span className="pricetag">$354.99</span></div>
+                        <div className="textgap" style={{marginTop:"10px"}}><strong> Add an Accessory</strong></div>
+                        <div>
+                            <label><input type="checkbox" ></input>Apple Airpods</label><br></br>
+                            <label><input type="checkbox" ></input>Apple 20W USB Power Adapter</label>
+                        </div>
+                        <div>
+                        <button className="placeorder__button addtocart">Add to Cart</button>
+                        <button className="placeorder__button buynow">Buy Now</button>
+                    </div>
+                </div>
             </Paper>
             </Grid>
         </Grid>
