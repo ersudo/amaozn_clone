@@ -14,9 +14,14 @@ export default function PlaceOrder(props) {
         let list = [
           {
             "id":100010, 
-            "name": "iPhone10", 
+            "name": "New Apple iPhone 10 (64GB) - Gree ", 
             "rating": "338,195", 
             "price":"58,399",   
+            "emi": "1001",
+            "review":"1000",
+            "status": "In stock",
+            "soldby": "Apple Store",
+            "delivery":"Wednesday, Feb 8",
             "image":"https://ik.imagekit.io/amazon1230/mobiles/71w3oJ7aWyL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259746",
             "about": [
               "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
@@ -25,12 +30,18 @@ export default function PlaceOrder(props) {
               "Face ID for secure authentication",
             ],
           },
-          {id:100011, 
-            name: "iPhone11", 
-            rating: "338,195", 
-            price : "58,399", 
-            image:"https://ik.imagekit.io/amazon1230/mobiles/71ZOtNdaZCL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259877",
-            about: [
+          {
+            "id":100011, 
+            "name": "New Apple iPhone 11 (64GB) - Blue", 
+            "rating": "338,195", 
+            "price" : "58,399",
+            "emi": "1001", 
+            "review":"1500",
+            "status": "In stock",
+            "soldby": "Apple Store",
+            "delivery":"Wednesday, Feb 8",
+            "image":"https://ik.imagekit.io/amazon1230/mobiles/71ZOtNdaZCL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259877",
+            "about": [
               "Desription for iphone 11 -bla bla",
               "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
               "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
@@ -39,12 +50,17 @@ export default function PlaceOrder(props) {
             ],
           },
           {
-            id:100012, 
-            name: "iPhone12", 
-            rating : "338,195", 
-            price : "58,399", 
-            image:"https://ik.imagekit.io/amazon1230/mobiles/71i2XhHU3pL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259867",
-            about: [
+            "id":100012, 
+            "name": "New Apple iPhone 12 (64GB) - Black", 
+            "rating" : "338,195", 
+            "price" : "58,399", 
+            "emi": "1001", 
+            "review":"1450",
+            "status": "In stock",
+            "soldby": "Apple Store",
+            "delivery":"Wednesday, Feb 8",
+            "image":"https://ik.imagekit.io/amazon1230/mobiles/71i2XhHU3pL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259867",
+            "about": [
               "Desription for iphone 12 -bla bla",
               "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
               "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
@@ -53,12 +69,17 @@ export default function PlaceOrder(props) {
             ],
           },
           {
-            id:100013,
-            name: "iPhone13", 
-            rating : "338,195", 
-            price : "58,399", 
-            image:"https://ik.imagekit.io/amazon1230/mobiles/51PuFBgBK4L._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259807",
-            about: [
+            "id":100013,
+            "name": "New Apple iPhone 13 (64GB) - Silverlight", 
+            "rating" : "338,195", 
+            "price" : "58,399", 
+            "emi": "1001", 
+            "review":"1248",
+            "status": "In stock",
+            "soldby": "Apple Store",
+            "delivery":"Wednesday, Feb 8",
+            "image":"https://ik.imagekit.io/amazon1230/mobiles/51PuFBgBK4L._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259807",
+            "about": [
               "Desription for iphone 13 -bla bla",
               "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
               "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
@@ -71,33 +92,60 @@ export default function PlaceOrder(props) {
         let item = list.filter(item =>{
             if(item.id == id) return item
         })
-        console.log(item)
-        setProductDetails(list)
+        setProductDetails(item[0])
   },[])  
 
   return (
     <div> 
         <Grid container>
         <Grid item xs={5}>
-            <img className="placeorder__image" src="https://ik.imagekit.io/amazon1230/mobiles/71w3oJ7aWyL._AC_UL640_FMwebp_QL65_.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672395259746"/>
+            <img className="placeorder__image" src={productDetails.image}/>
         </Grid>
         <Grid item xs={4}>
             <div className="placerorder__description">
-                <div style={{fontSize:"24px",lineHeight: "32px",fontWeight:"500"}}>New Apple iPhone 11 (64GB) - Green </div>
+                <div style={{fontSize:"24px",lineHeight: "32px",fontWeight:"500"}}>{productDetails.name}</div> 
+                {/* New Apple iPhone 11 (64GB) - Green  */}
                 <div>
                     <Rating name="read-only" value="3" readOnly  style={{fontSize:"20px"}}/>
-                    32,054 ratings |
-                    1000+ answered questions
+                    {productDetails.rating} ratings |
+                    {productDetails.review}+ answered questions
                 </div>
                 <hr></hr>
                 <div>
-                    <div className="textgap">Price:	<span className="pricetag">$354.99</span></div>
-                    <div className="textgap">FREE delivery: <strong>Wednesday, Feb 8</strong></div>
+                    {/* <div className="textgap">Size: <strong>64GB</strong></div> */}
+                    <div className="textgap">Price:	<span className="pricetag">${productDetails.price}</span></div>
+                    <div className="textgap">FREE delivery: <strong>{productDetails.delivery}</strong></div>
+                    <div className="textgap">EMI starts at $ {productDetails.emi}. No Cost EMI available</div>
                     <div className="textgap">$48.96 Shipping & Import Fees Deposit to Republic of Korea 
                     <span className="about__detail"> Details</span></div>
+                    <div style={{ color: "#007600", fontSize: "20px"}} className="textgap">{productDetails.status}</div>
+                    <div className="textgap">Sold by <strong>{productDetails.soldby}</strong> and Fulfilled by Amazon.</div>
                     <div className="textgap">Available at a lower price from <span className="about__seller"> other sellers </span>that may not offer free Prime shipping.</div>
-                    <div className="textgap">Size: <strong>64GB</strong></div>
+                    
                 </div>
+                  <div>
+                    <br></br>
+                            <div style={{fontSize:"24px" }} className="textgap">About this item</div>
+                            <div>
+                                <ul>
+                                {   
+                                    productDetails.about!=undefined ?
+                                    productDetails.about.map ( (item) =>(
+                                        <li>{item}</li>
+                                    )) : <span></span>
+                                }
+                                </ul>
+                                {/* <ul> */}
+                                {/* <li>6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display</li>
+                                <li>Water and dust resistant (2 meters for up to 30 minutes, IP68)</li>
+                                <li>Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps</li>
+                                <li>12MP TrueDepth front camera with Portrait mode, 4K video, and Slo-Mo</li>
+                                <li>Face ID for secure authentication</li>
+                                <li>A13 Bionic chip with third-generation Neural Engine</li>
+                                <li>Fast-charge capable</li>
+                                </ul> */}
+                            </div>
+                        </div>
             </div>
         </Grid>
         <Grid item xs={3}>
