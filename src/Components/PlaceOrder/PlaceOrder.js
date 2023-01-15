@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./PlaceOrder.css"
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Paper from '@mui/material/Paper';
-import { Checkbox } from '@mui/material';
+// import { Checkbox } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
+import { CartContext } from '../CartContext';
 export default function PlaceOrder(props) {
+    const {item, size,increment} = useContext(CartContext)
     const [productDetails,setProductDetails] = useState([])
     let {id} = useParams()
+
+    const addToCart = function(){
+      increment(productDetails)
+    }
+
     useEffect(() =>{
 
         // api call
@@ -16,7 +23,7 @@ export default function PlaceOrder(props) {
             "id":100010, 
             "name": "New Apple iPhone 10 (64GB) - Gree ", 
             "rating": "338,195", 
-            "price":"58,399",   
+            "price":"58.399",   
             "emi": "1001",
             "review":"1000",
             "status": "In stock",
@@ -34,7 +41,7 @@ export default function PlaceOrder(props) {
             "id":100011, 
             "name": "New Apple iPhone 11 (64GB) - Blue", 
             "rating": "338,195", 
-            "price" : "58,399",
+            "price" : "58.399",
             "emi": "1001", 
             "review":"1500",
             "status": "In stock",
@@ -53,7 +60,7 @@ export default function PlaceOrder(props) {
             "id":100012, 
             "name": "New Apple iPhone 12 (64GB) - Black", 
             "rating" : "338,195", 
-            "price" : "58,399", 
+            "price" : "58.399", 
             "emi": "1001", 
             "review":"1450",
             "status": "In stock",
@@ -72,7 +79,7 @@ export default function PlaceOrder(props) {
             "id":100013,
             "name": "New Apple iPhone 13 (64GB) - Silverlight", 
             "rating" : "338,195", 
-            "price" : "58,399", 
+            "price" : "58.399", 
             "emi": "1001", 
             "review":"1248",
             "status": "In stock",
@@ -158,10 +165,11 @@ export default function PlaceOrder(props) {
                             <label><input type="checkbox" ></input>Apple 20W USB Power Adapter</label>
                         </div>
                         <div>
-                        <Link to ="/checkout">
-                            <button className="placeorder__button addtocart">Add to Cart</button>
-                        </Link>
-                        <button className="placeorder__button buynow">Buy Now</button>
+                        
+                            <button className="placeorder__button addtocart" onClick={addToCart}>Add to Cart</button>
+                          <Link to ="/checkout">
+                            <button className="placeorder__button buynow">Buy Now</button>
+                          </Link>
                     </div>
                 </div>
             </Paper>
